@@ -314,11 +314,20 @@ a {
   background: var(--color-secondary);
   color: white;
 }
+.card--primary .badge--primary {
+  background: #126de4;
+}
 
 .card--secondary .badge--secondary {
   background: #02cdf1;
 }
 /* Plans */
+.plan {
+  transition: transform 0.2s ease-out;
+}
+.plan--popular {
+  transform: scale(1.1);
+}
 .plan--popular .card__header {
   position: relative;
 }
@@ -358,6 +367,13 @@ a {
 
 .plan .list__item {
   margin-bottom: 2rem;
+}
+
+.plan:hover {
+  transform: scale(1.05);
+}
+.plan--popular:hover {
+  transform: scale(1.15);
 }
 
 @media screen and (min-width: 1024px) {
@@ -698,5 +714,39 @@ a {
 @media screen and (min-width: 768px) {
   .block-domain__prices {
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  }
+}
+
+/* Block Plans */
+
+.block-plans .grid {
+  gap: 8rem 4rem;
+}
+
+.block-plans .plan {
+  max-width: 500px;
+  margin: auto;
+}
+
+/* Features */
+.feature {
+  gap: 4rem 2rem;
+  margin: 12rem 0;
+}
+
+.feature:first-of-type {
+  margin-top: 6rem;
+}
+.feature__heading {
+  margin: 1rem 0;
+}
+
+.feature__image {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .feature:nth-of-type(even) .feature__content {
+    order: 2;
   }
 }
